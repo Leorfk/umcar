@@ -1,0 +1,9 @@
+CREATE TABLE cliente (
+    idcliente SERIAL,
+    nome CHARACTER VARYING,
+    cpf CHARACTER VARYING,
+    tel_res CHARACTER VARYING,
+    tel_cel CHARACTER VARYING,
+    e_mail CHARACTER VARYING,
+CONSTRAINT pk_cliente PRIMARY KEY (idcliente)
+);

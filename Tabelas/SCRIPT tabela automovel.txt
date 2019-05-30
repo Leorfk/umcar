@@ -1,0 +1,17 @@
+CREATE TABLE automovel (
+    idAutomovel SERIAL,
+    placa CHARACTER VARYING,
+    marca CHARACTER VARYING,
+    modelo CHARACTER VARYING,
+    chassi CHARACTER VARYING NOT NULL,
+    observacoes CHARACTER VARYING,
+    portas INTEGER,
+    passageiros INTEGER,
+    tipoAutomovel CHARACTER VARYING,
+    cor CHARACTER VARYING,
+    valorVenda NUMERIC(10, 2),
+    status CHARACTER VARYING,
+CONSTRAINT automovel_pk PRIMARY KEY (idAutomovel),
+CONSTRAINT uk_placa UNIQUE(placa),
+CONSTRAINT uk_chassi UNIQUE(chassi)
+);

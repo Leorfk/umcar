@@ -1,0 +1,17 @@
+CREATE TABLE transacao (
+	id SERIAL,
+	numero INTEGER,
+	data DATE,
+	hora TIME WITHOUT TIME ZONE,
+	idCliente INTEGER NOT NULL,
+	idAutomovel INTEGER NOT NULL,	
+	observacao CHARACTER VARYING,
+	total NUMERIC(10,2) NOT NULL,
+	situacao CHARACTER VARYING,
+CONSTRAINT id_transacao PRIMARY KEY(id),
+CONSTRAINT uk_numero UNIQUE(numero),
+CONSTRAINT fk_automovel FOREIGN KEY(idAutomovel)
+	REFERENCES automovel(idAutomovel),
+CONSTRAINT fk_cliente FOREIGN KEY(idCliente)
+	REFERENCES cliente(idCliente)
+);

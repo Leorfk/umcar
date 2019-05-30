@@ -1,0 +1,12 @@
+CREATE TABLE usuario (
+    idusuario SERIAL,
+    nomeusuario CHARACTER VARYING,
+    email CHARACTER VARYING,
+    senha CHARACTER VARYING,
+    CONSTRAINT usuario_pkey PRIMARY KEY (idusuario),
+    CONSTRAINT usuario_email_key UNIQUE (email),
+    CONSTRAINT usuario_nomeusuario_key UNIQUE (nomeusuario)
+);
+
+
+INSERT INTO usuario(nomeusuario, email, senha) VALUES ('Rodrigo', 'adm@umcar.com.br', '123');
